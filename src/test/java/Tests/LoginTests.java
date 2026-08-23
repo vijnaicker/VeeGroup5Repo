@@ -9,19 +9,19 @@ public class LoginTests extends base {
     public void clickLoginButton()throws InterruptedException {
         homePage.clickLoginButton();
     }
-    @Test
-    public void enterUsernameTests(){
+    @Test(dependsOnMethods = {"clickLoginButton"})
+    public void enterUsernameTests()throws InterruptedException {
        loginPage.enterUsername("vijnaicker@gmail.com");
        Thread.sleep(2000);
     }
-    @Test
-    public void enterPasswordTests(){
+    @Test(dependsOnMethods = {"enterUsernameTests"})
+    public void enterPasswordTests()throws InterruptedException {
         loginPage.enterPassword("vtest@ntest2");
         Thread.sleep(2000);
     }
-    /*@Test
+    @Test(dependsOnMethods = {"enterPasswordTests"})
     public void clickSubmitButton()throws InterruptedException {
         loginPage.submitLoginCredentials();
         Thread.sleep(2000);
-    }*/
+    }
 }
