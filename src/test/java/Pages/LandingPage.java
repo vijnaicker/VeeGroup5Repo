@@ -9,6 +9,8 @@ public class LandingPage {
 
     @FindBy(xpath = "//span[contains(text(),'Learn')]")
     WebElement learnButton;
+    @FindBy(xpath = "//span[contains(text(),'Learning Materials')]")
+    WebElement learningMaterialsButton;
 
     public LandingPage(WebDriver driver) {
         this.driver = driver;
@@ -17,6 +19,9 @@ public class LandingPage {
 
     public void clickLearnButton() {
         learnButton.click();
+    }
+    public void clickLearningMaterials(){
+        learningMaterialsButton.click();
     }
 
 }

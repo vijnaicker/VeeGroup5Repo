@@ -29,5 +29,10 @@ public class LoginTests extends base {
         landingPage.clickLearnButton();
         Thread.sleep(2000);
     }
+    @Test(dependsOnMethods = {"clickLearnButton"})
+    public void clickLearningMaterialsButton() throws InterruptedException {
+        landingPage.clickLearningMaterials();
+        Thread.sleep(2000);
+    }
 
 }
