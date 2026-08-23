@@ -8,7 +8,10 @@ public class LoginPage {
 
     @FindBy(id = "login-email")
     WebElement usernameField;
-
+    @FindBy(id = "login-password")
+    WebElement passwordField;
+    @FindBy(id = "login-submit")
+    WebElement submitButton;
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -16,5 +19,11 @@ public class LoginPage {
     public void enterUsername(String username) {
         usernameField.sendKeys(username);
 
+    }
+    public void enterPassword(String password){
+        passwordField.sendKeys(password);
+    }
+        public void submitLoginCredentials(){
+        submitButton.click();
     }
 }
