@@ -12,6 +12,7 @@ public class LoginPage {
     WebElement passwordField;
     @FindBy(id = "login-submit")
     WebElement submitButton;
+
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
