@@ -1,9 +1,6 @@
 package Tests;
 
-import Pages.HomePage;
-import Pages.LandingPage;
-import Pages.LearningMaterialsPage;
-import Pages.LoginPage;
+import Pages.*;
 import Utils.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -17,5 +14,5 @@ public class base {
     public LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
     public LandingPage landingPage = PageFactory.initElements(driver, LandingPage.class);
     public LearningMaterialsPage learningMaterialsPage = PageFactory.initElements(driver, LearningMaterialsPage.class);
-
+    public InventoryFromPage inventoryFromPage = PageFactory.initElements(driver, InventoryFromPage.class);
 }

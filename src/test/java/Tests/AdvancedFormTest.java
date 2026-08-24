@@ -37,4 +37,9 @@ public class AdvancedFormTest extends base {
         learningMaterialsPage.clickWebAutomationAdvance();
         Thread.sleep(2000);
     }
+    @Test(dependsOnMethods = {"clickAdvancedFormButton"})
+    public void selectDeviceType() throws InterruptedException {
+        inventoryFromPage.selectDeviceType("Phone");
+        Thread.sleep(2000);
+    }
 }
