@@ -1,9 +1,7 @@
 package Tests;
-import Pages.LandingPage;
-import Pages.LoginPage;
 import org.testng.annotations.Test;
 
-public class LoginTests extends base {
+public class AdvancedFormTest extends base {
 
     @Test
     public void clickLoginButton()throws InterruptedException {
@@ -34,5 +32,9 @@ public class LoginTests extends base {
         landingPage.clickLearningMaterials();
         Thread.sleep(2000);
     }
-
+    @Test(dependsOnMethods = {"clickLearningMaterialsButton"})
+    public void clickAdvancedFormButton() throws InterruptedException {
+        learningMaterialsPage.clickWebAutomationAdvance();
+        Thread.sleep(2000);
+    }
 }
