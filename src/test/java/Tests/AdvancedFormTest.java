@@ -96,5 +96,14 @@ public class AdvancedFormTest extends base {
         orderPreviewPage.clickConfirmPurchaseBtn();
         Thread.sleep(2000);
     }
-
+    @Test(dependsOnMethods = {"clickConfirmPurchaseBtn"})
+    public void clickViewInvoiceBtn() throws InterruptedException {
+        orderPreviewPage.clickViewInvoiceBtn();
+        Thread.sleep(2000);
+    }
+    @Test(dependsOnMethods = {"clickViewInvoiceBtn"})
+    public void clickViewPurchaseInvoiceBtn() throws InterruptedException {
+        orderPreviewPage.clickViewPurchaseInvoiceBtn();
+        Thread.sleep(2000);
+    }
 }

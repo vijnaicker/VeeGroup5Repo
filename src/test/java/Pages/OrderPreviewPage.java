@@ -19,7 +19,10 @@ public class OrderPreviewPage {
     WebElement applyDiscountBtn;
     @FindBy(id="purchase-device-btn")
     WebElement confirmPurchaseBtn;
-
+    @FindBy(id="view-history-btn")
+    WebElement viewInvoiceBtn;
+    @FindBy(id="view-invoice-INV-1787675701119")
+    WebElement clickViewPurchaseInvoiceBtn;
 
     public void selectExpressShippingOption() {
         expressShippingOption.click();
@@ -35,5 +38,11 @@ public class OrderPreviewPage {
     }
     public void clickConfirmPurchaseBtn() {
         confirmPurchaseBtn.click();
+    }
+    public void clickViewInvoiceBtn() {
+        viewInvoiceBtn.click();
+    }
+    public void clickViewPurchaseInvoiceBtn() {
+        clickViewPurchaseInvoiceBtn.click();
     }
 }
