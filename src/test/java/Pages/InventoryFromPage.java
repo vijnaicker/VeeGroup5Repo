@@ -13,8 +13,14 @@ public class InventoryFromPage {
 
     @FindBy(id="deviceType")
     WebElement deviceTypeDropdown;
+    @FindBy(id="brand")
+    WebElement brandDropdown;
+
 
     public void selectDeviceType(String deviceType) {
         deviceTypeDropdown.sendKeys(deviceType);
+    }
+    public void selectBrand(String brand) {
+        brandDropdown.sendKeys(brand);
     }
 }

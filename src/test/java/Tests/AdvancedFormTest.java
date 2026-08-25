@@ -42,4 +42,8 @@ public class AdvancedFormTest extends base {
         inventoryFromPage.selectDeviceType("Phone");
         Thread.sleep(2000);
     }
+    @Test(dependsOnMethods = {"selectDeviceType"})
+    public void selectDeviceBrand() throws InterruptedException {
+        inventoryFromPage.selectBrand("Apple");
+        Thread.sleep(2000);}
 }
