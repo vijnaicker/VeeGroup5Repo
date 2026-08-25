@@ -15,6 +15,8 @@ public class InventoryFromPage {
     WebElement deviceTypeDropdown;
     @FindBy(id="brand")
     WebElement brandDropdown;
+    @FindBy(xpath = "//span[contains(text(),'128GB')]")
+    WebElement storageRadioButton;
 
 
     public void selectDeviceType(String deviceType) {
@@ -22,5 +24,8 @@ public class InventoryFromPage {
     }
     public void selectBrand(String brand) {
         brandDropdown.sendKeys(brand);
+    }
+    public void clickStorageRadioButton() {
+        storageRadioButton.click();
     }
 }
