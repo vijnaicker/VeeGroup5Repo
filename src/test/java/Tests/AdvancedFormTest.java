@@ -71,5 +71,30 @@ public class AdvancedFormTest extends base {
         inventoryFromPage.clickNextButton();
         Thread.sleep(2000);
     }
+    @Test(dependsOnMethods = {"clickNextButton"})
+    public void clickExpressShipping() throws InterruptedException {
+        orderPreviewPage.selectExpressShippingOption();
+        Thread.sleep(2000);
+    }
+    @Test(dependsOnMethods = {"clickExpressShipping"})
+    public void clickOneYearWarranty() throws InterruptedException {
+        orderPreviewPage.selectOneYearWarranty();
+        Thread.sleep(2000);
+    }
+    @Test(dependsOnMethods = {"clickOneYearWarranty"})
+    public void enterDiscountCode() throws InterruptedException {
+        orderPreviewPage.enterDiscountCode("SAVE10");
+        Thread.sleep(2000);
+    }
+    @Test(dependsOnMethods = {"enterDiscountCode"})
+    public void clickApplyDiscountBtn() throws InterruptedException {
+        orderPreviewPage.clickApplyDiscountBtn();
+        Thread.sleep(2000);
+    }
+    @Test(dependsOnMethods = {"clickApplyDiscountBtn"})
+    public void clickConfirmPurchaseBtn() throws InterruptedException {
+        orderPreviewPage.clickConfirmPurchaseBtn();
+        Thread.sleep(2000);
+    }
 
 }

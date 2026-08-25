@@ -15,4 +15,5 @@ public class base {
     public LandingPage landingPage = PageFactory.initElements(driver, LandingPage.class);
     public LearningMaterialsPage learningMaterialsPage = PageFactory.initElements(driver, LearningMaterialsPage.class);
     public InventoryFromPage inventoryFromPage = PageFactory.initElements(driver, InventoryFromPage.class);
+    public OrderPreviewPage orderPreviewPage = PageFactory.initElements(driver, OrderPreviewPage.class);
 }
