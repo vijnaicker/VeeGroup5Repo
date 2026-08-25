@@ -46,4 +46,30 @@ public class AdvancedFormTest extends base {
     public void selectDeviceBrand() throws InterruptedException {
         inventoryFromPage.selectBrand("Apple");
         Thread.sleep(2000);}
+    @Test(dependsOnMethods = {"selectDeviceBrand"})
+    public void clickStorageRadioButton() throws InterruptedException {
+        inventoryFromPage.clickStorageRadioButton();
+        Thread.sleep(2000);
+    }
+    @Test(dependsOnMethods = {"clickStorageRadioButton"})
+    public void selectColor() throws InterruptedException {
+        inventoryFromPage.selectColor("Blue");
+        Thread.sleep(2000);
+    }
+    @Test(dependsOnMethods = {"selectColor"})
+    public void enterQuantity() throws InterruptedException {
+        inventoryFromPage.enterQuantity("2");
+        Thread.sleep(2000);
+    }
+    @Test(dependsOnMethods = {"enterQuantity"})
+    public void enterAddress() throws InterruptedException {
+        inventoryFromPage.enterAddress("123 Main St, Anytown, USA");
+        Thread.sleep(2000);
+    }
+    @Test(dependsOnMethods = {"enterAddress"})
+    public void clickNextButton() throws InterruptedException {
+        inventoryFromPage.clickNextButton();
+        Thread.sleep(2000);
+    }
+
 }
