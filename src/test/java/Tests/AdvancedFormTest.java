@@ -61,5 +61,15 @@ public class AdvancedFormTest extends base {
         inventoryFromPage.enterQuantity("2");
         Thread.sleep(2000);
     }
+    @Test(dependsOnMethods = {"enterQuantity"})
+    public void enterAddress() throws InterruptedException {
+        inventoryFromPage.enterAddress("123 Main St, Anytown, USA");
+        Thread.sleep(2000);
+    }
+    @Test(dependsOnMethods = {"enterAddress"})
+    public void clickNextButton() throws InterruptedException {
+        inventoryFromPage.clickNextButton();
+        Thread.sleep(2000);
+    }
 
 }

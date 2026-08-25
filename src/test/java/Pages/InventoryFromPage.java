@@ -3,6 +3,7 @@ package Pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.annotations.Test;
 
 public class InventoryFromPage {
 
@@ -21,7 +22,10 @@ public class InventoryFromPage {
     WebElement colorDropdown;
     @FindBy(id="quantity")
     WebElement quantityInput;
-
+    @FindBy(id="address")
+    WebElement addressInput;
+    @FindBy(id="inventory-next-btn")
+    WebElement nextButton;
 
     public void selectDeviceType(String deviceType) {
         deviceTypeDropdown.sendKeys(deviceType);
@@ -37,6 +41,12 @@ public class InventoryFromPage {
     }
     public void enterQuantity(String quantity) {
         quantityInput.sendKeys(quantity);
+    }
+    public void enterAddress(String address) {
+        addressInput.sendKeys(address);
+    }
+    public void clickNextButton() {
+        nextButton.click();
     }
 
 }
