@@ -51,5 +51,15 @@ public class AdvancedFormTest extends base {
         inventoryFromPage.clickStorageRadioButton();
         Thread.sleep(2000);
     }
+    @Test(dependsOnMethods = {"clickStorageRadioButton"})
+    public void selectColor() throws InterruptedException {
+        inventoryFromPage.selectColor("Blue");
+        Thread.sleep(2000);
+    }
+    @Test(dependsOnMethods = {"selectColor"})
+    public void enterQuantity() throws InterruptedException {
+        inventoryFromPage.enterQuantity("2");
+        Thread.sleep(2000);
+    }
 
 }

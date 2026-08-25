@@ -17,6 +17,10 @@ public class InventoryFromPage {
     WebElement brandDropdown;
     @FindBy(xpath = "//span[contains(text(),'128GB')]")
     WebElement storageRadioButton;
+    @FindBy(id="color")
+    WebElement colorDropdown;
+    @FindBy(id="quantity")
+    WebElement quantityInput;
 
 
     public void selectDeviceType(String deviceType) {
@@ -28,4 +32,11 @@ public class InventoryFromPage {
     public void clickStorageRadioButton() {
         storageRadioButton.click();
     }
+    public void selectColor(String color) {
+        colorDropdown.sendKeys(color);
+    }
+    public void enterQuantity(String quantity) {
+        quantityInput.sendKeys(quantity);
+    }
+
 }
