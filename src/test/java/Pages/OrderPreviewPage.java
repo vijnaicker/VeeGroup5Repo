@@ -1,14 +1,19 @@
 package Pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
 public class OrderPreviewPage {
     WebDriver driver;
     public OrderPreviewPage(WebDriver driver) {
         this.driver = driver;
     }
+   WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     @FindBy(id="shipping-option-express")
     WebElement expressShippingOption;
     @FindBy(id="warranty-1yr")
@@ -20,9 +25,10 @@ public class OrderPreviewPage {
     @FindBy(id="purchase-device-btn")
     WebElement confirmPurchaseBtn;
     @FindBy(id="view-history-btn")
-    WebElement viewInvoiceBtn;
-    @FindBy(id="view-invoice-INV-1787675701119")
-    WebElement clickViewPurchaseInvoiceBtn;
+     WebElement viewInvoiceBtn;
+    @FindBy(xpath = "//button[contains(normalize-space(.),'View')]")
+    WebElement viewInvoiceHistoryBtn;
+
 
     public void selectExpressShippingOption() {
         expressShippingOption.click();
@@ -43,6 +49,6 @@ public class OrderPreviewPage {
         viewInvoiceBtn.click();
     }
     public void clickViewPurchaseInvoiceBtn() {
-        clickViewPurchaseInvoiceBtn.click();
+        viewInvoiceHistoryBtn.click();
     }
 }

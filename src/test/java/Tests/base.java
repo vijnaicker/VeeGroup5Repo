@@ -4,6 +4,9 @@ import Pages.*;
 import Utils.BrowserFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class base {
 
@@ -16,4 +19,5 @@ public class base {
     public LearningMaterialsPage learningMaterialsPage = PageFactory.initElements(driver, LearningMaterialsPage.class);
     public InventoryFromPage inventoryFromPage = PageFactory.initElements(driver, InventoryFromPage.class);
     public OrderPreviewPage orderPreviewPage = PageFactory.initElements(driver, OrderPreviewPage.class);
+
 }
