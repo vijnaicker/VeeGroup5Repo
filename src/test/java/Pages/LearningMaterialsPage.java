@@ -3,6 +3,10 @@ package Pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LearningMaterialsPage {
 
@@ -16,6 +20,7 @@ public class LearningMaterialsPage {
     WebElement webAutomationAdvanceButton;
 
     public void clickWebAutomationAdvance() {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(webAutomationAdvanceButton));
         webAutomationAdvanceButton.click();
     }
 }
