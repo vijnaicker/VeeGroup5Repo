@@ -5,7 +5,7 @@ public class AdvancedFormTest extends base {
 
     @Test
     public void clickLoginButton()throws InterruptedException {
-        takesScreenshots.takesSnapShot(driver,"Login Page");
+        takesScreenshots.takesSnapShot(driver,"Land Page");
         homePage.clickLoginButton();
     }
     @Test(dependsOnMethods = {"clickLoginButton"})
@@ -25,6 +25,7 @@ public class AdvancedFormTest extends base {
     }
     @Test(dependsOnMethods = {"clickSubmitButton"})
     public void clickLearnButton() throws InterruptedException {
+        takesScreenshots.takesSnapShot(driver,"Home Page");
         landingPage.clickLearnButton();
 
     }
@@ -35,12 +36,13 @@ public class AdvancedFormTest extends base {
     }
     @Test(dependsOnMethods = {"clickLearningMaterialsButton"})
     public void clickAdvancedFormButton() throws InterruptedException {
+        takesScreenshots.takesSnapShot(driver,"Learning Materials Page");
         learningMaterialsPage.clickWebAutomationAdvance();
 
     }
     @Test(dependsOnMethods = {"clickAdvancedFormButton"})
     public void selectDeviceType() throws InterruptedException {
-        inventoryFromPage.selectDeviceType("Phone");
+                inventoryFromPage.selectDeviceType("Phone");
 
     }
     @Test(dependsOnMethods = {"selectDeviceType"})
@@ -74,6 +76,7 @@ public class AdvancedFormTest extends base {
     }
     @Test(dependsOnMethods = {"clickNextButton"})
     public void clickExpressShipping() throws InterruptedException {
+        takesScreenshots.takesSnapShot(driver,"Order Preview Page");
         orderPreviewPage.selectExpressShippingOption();
 
     }
@@ -99,11 +102,13 @@ public class AdvancedFormTest extends base {
     }
     @Test(dependsOnMethods = {"clickConfirmPurchaseBtn"})
     public void clickViewInvoiceBtn() throws InterruptedException {
+       // takesScreenshots.takesSnapShot(driver,"View Invoice Pop-Up");
         orderPreviewPage.clickViewInvoiceBtn();
 
     }
     @Test(dependsOnMethods = {"clickViewInvoiceBtn"})
     public void clickViewPurchaseInvoiceBtn() throws InterruptedException {
+        takesScreenshots.takesSnapShot(driver,"View Invoice History Pop-Up");
         orderPreviewPage.clickViewPurchaseInvoiceBtn();
 
     }
