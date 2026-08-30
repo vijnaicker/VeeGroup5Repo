@@ -49,15 +49,19 @@ public class InventoryFromPage {
         storageRadioButton.click();
     }
     public void selectColor(String color) {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(colorDropdown));
         colorDropdown.sendKeys(color);
     }
     public void enterQuantity(String quantity) {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(quantityInput));
         quantityInput.sendKeys(quantity);
     }
     public void enterAddress(String address) {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(addressInput));
         addressInput.sendKeys(address);
     }
     public void clickNextButton() {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(nextButton));
         nextButton.click();
     }
 
