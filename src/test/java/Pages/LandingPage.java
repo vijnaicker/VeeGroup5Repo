@@ -29,7 +29,8 @@ public class LandingPage {
         myLearningTab.isDisplayed();
         learnButton.click();
     }
-    public void clickLearningMaterials(){
+    public void clickLearningMaterials() {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(learningMaterialsButton));
         learningMaterialsButton.click();
     }
 
