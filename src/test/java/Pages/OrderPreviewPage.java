@@ -28,9 +28,15 @@ public class OrderPreviewPage {
      WebElement viewInvoiceBtn;
     @FindBy(xpath = "//button[contains(normalize-space(.),'View')]")
     WebElement viewInvoiceHistoryBtn;
-
+    @FindBy(id="device-summary")
+    WebElement deviceSummary;
+    @FindBy(id="discount-feedback")
+    WebElement discountFeedback;
+    @FindBy(id="purchase-success-toast")
+    WebElement purchaseSuccessToast;
 
     public void selectExpressShippingOption() {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(deviceSummary));
         expressShippingOption.click();
     }
     public void selectOneYearWarranty() {
@@ -43,12 +49,15 @@ public class OrderPreviewPage {
         applyDiscountBtn.click();
     }
     public void clickConfirmPurchaseBtn() {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(discountFeedback));
         confirmPurchaseBtn.click();
     }
     public void clickViewInvoiceBtn() {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(purchaseSuccessToast));
         viewInvoiceBtn.click();
     }
     public void clickViewPurchaseInvoiceBtn() {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(viewInvoiceHistoryBtn));
         viewInvoiceHistoryBtn.click();
     }
 }

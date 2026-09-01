@@ -3,7 +3,11 @@ package Pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 public class InventoryFromPage {
 
@@ -26,26 +30,38 @@ public class InventoryFromPage {
     WebElement addressInput;
     @FindBy(id="inventory-next-btn")
     WebElement nextButton;
+    @FindBy(id="device-preview")
+    WebElement devicePreview;
+    @FindBy(xpath = "//img[@alt='Apple phone']")
+    WebElement deviceImage;
+
+    /*[@id="device-preview"]/div/svg/rect[2]*/
 
     public void selectDeviceType(String deviceType) {
         deviceTypeDropdown.sendKeys(deviceType);
     }
     public void selectBrand(String brand) {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(devicePreview));
         brandDropdown.sendKeys(brand);
     }
     public void clickStorageRadioButton() {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.visibilityOf(deviceImage));
         storageRadioButton.click();
     }
     public void selectColor(String color) {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(colorDropdown));
         colorDropdown.sendKeys(color);
     }
     public void enterQuantity(String quantity) {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(quantityInput));
         quantityInput.sendKeys(quantity);
     }
     public void enterAddress(String address) {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(addressInput));
         addressInput.sendKeys(address);
     }
     public void clickNextButton() {
+        new WebDriverWait(driver, Duration.ofSeconds(15)).until(ExpectedConditions.elementToBeClickable(nextButton));
         nextButton.click();
     }
 
