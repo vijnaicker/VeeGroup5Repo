@@ -2,6 +2,7 @@ package Tests;
 
 import Pages.*;
 import Utils.BrowserFactory;
+import Utils.ReadData;
 import Utils.TakesScreenshots;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
@@ -21,4 +22,13 @@ public class base {
     public InventoryFromPage inventoryFromPage = PageFactory.initElements(driver, InventoryFromPage.class);
     public OrderPreviewPage orderPreviewPage = PageFactory.initElements(driver, OrderPreviewPage.class);
     public TakesScreenshots takesScreenshots = new TakesScreenshots();
+    ReadData readData;
+
+    {
+        try {
+            readData = new ReadData();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
