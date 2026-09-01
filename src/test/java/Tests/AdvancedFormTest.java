@@ -41,7 +41,7 @@ public class AdvancedFormTest extends base {
     }
     @Test(dependsOnMethods = {"clickAdvancedFormButton"})
     public void selectDeviceType() throws InterruptedException {
-                inventoryFromPage.selectDeviceType("Phone");
+                inventoryFromPage.selectDeviceType(readData.deviceType);
 
     }
     @Test(dependsOnMethods = {"selectDeviceType"})
