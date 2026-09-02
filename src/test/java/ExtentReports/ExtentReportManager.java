@@ -3,9 +3,12 @@ package ExtentReports;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
+
+
 public class ExtentReportManager {
 
-   /* static String reportDir = System.getProperty("user.dir") + "/target/Report/Ndosi Test Report.html";
+    static String reportDir = System.getProperty("user.dir") + "/target/Report/Ndosi Test Report.html";
+
 
     private static ExtentReports extentReports;
     private static ExtentSparkReporter extentSparkReporter;
@@ -21,5 +24,5 @@ public class ExtentReportManager {
         extentReports.setSystemInfo("Execution Machine", System.getProperty("user.name"));
 
         return extentReports;
-    }*/
+    }
 }

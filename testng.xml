@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+       <listener class-name="ExtentReports.Listener"></listener>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="/Users/vijhannaicker/Desktop/Ndosi_Automation/VeeGroup5Repo">
+        <classes>
+            <class name="Basics.Basic_Test">
+                <methods>
+                    <include name="enterCredentials"/>
+                    <include name="clickSubmit"/>
+                    <include name="verifyLogin"/>
+                    <include name="clickLearn"/>
+                    <include name="verifyLearningMaterials"/>
+                    <include name="clickLearningMaterials"/>
+                    <include name="verifyBasicForm"/>
+                    <include name="clickBasicForm"/>
+                    <include name="verifyExpandBasicForm"/>
+                    <include name="clickExpandBasicForm"/>
+                    <include name="verifySummaryBasicForm"/>
+                    <include name="clickSummaryBasicForm"/>
+                </methods>
+            </class>
+            <class name="Pages.LandingPage">
+                <methods>
+                    <include name="clickLearn"/>
+                    <include name="verifyLearningMaterials"/>
+                    <include name="clickLearningMaterials"/>
+                </methods>
+            </class>
+            <class name="Tests.AdvancedFormTest">
+                <methods>
+                    <include name="clickLoginButton"/>
+                </methods>
+            </class>
+            <class name="Utils.BrowserFactory">
+                <methods>
+                    <include name="testBrowser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
