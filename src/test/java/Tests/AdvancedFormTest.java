@@ -10,12 +10,11 @@ public class AdvancedFormTest extends base {
     }
     @Test(dependsOnMethods = {"clickLoginButton"})
     public void enterUsernameTests()throws InterruptedException {
-       loginPage.enterUsername("vijnaicker@gmail.com");
-
+              loginPage.enterUsername(readData.username);
     }
     @Test(dependsOnMethods = {"enterUsernameTests"})
     public void enterPasswordTests()throws InterruptedException {
-        loginPage.enterPassword("vtest@ntest2");
+                loginPage.enterPassword(readData.password);
 
     }
     @Test(dependsOnMethods = {"enterPasswordTests"})
@@ -42,7 +41,7 @@ public class AdvancedFormTest extends base {
     }
     @Test(dependsOnMethods = {"clickAdvancedFormButton"})
     public void selectDeviceType() throws InterruptedException {
-                inventoryFromPage.selectDeviceType("Phone");
+                inventoryFromPage.selectDeviceType(readData.deviceType);
 
     }
     @Test(dependsOnMethods = {"selectDeviceType"})
